@@ -5,20 +5,20 @@
 class Cryptctl < Formula
   desc "CLI for managing secrets to be used with encrypted-secrets"
   homepage "https://github.com/opensecrecy/cryptctl"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.0/cryptctl-0.1.0-darwin-arm64.tar.gz"
-      sha256 "956e1cad7556ffcbbb5efd958a338d4b1ac6b3e51fab434a71ddea50c590a2c4"
+      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.1/cryptctl-0.1.1-darwin-arm64.tar.gz"
+      sha256 "0d328dee2200a531864a846516682c08404a2be0d8dc5b47095387fb938eccf8"
 
       def install
         bin.install "cryptctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.0/cryptctl-0.1.0-darwin-amd64.tar.gz"
-      sha256 "e082a23e9ddd5eb525f47790b3761033b375f43720f2bc4faf33e6584d86c38d"
+      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.1/cryptctl-0.1.1-darwin-amd64.tar.gz"
+      sha256 "d3700879d7e690d9455c799dfa010c7b7c0d3594b41680096c36f3bbf2d33661"
 
       def install
         bin.install "cryptctl"
@@ -27,17 +27,17 @@ class Cryptctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.0/cryptctl-0.1.0-linux-arm64.tar.gz"
-      sha256 "7bb03eec4dcfe18b553ebfe827f759b11277b660002b388b3a36c29f80f064c4"
+    if Hardware::CPU.intel?
+      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.1/cryptctl-0.1.1-linux-amd64.tar.gz"
+      sha256 "3739d545024cde0879cb841f770da7d9ee048bb6000d29ccc0054ebbf1723d75"
 
       def install
         bin.install "cryptctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.0/cryptctl-0.1.0-linux-amd64.tar.gz"
-      sha256 "4ce37d137bc9e35c15e1c1cd63825ed3450540ab1eb624b570fd2e591f4fefdf"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/opensecrecy/cryptctl/releases/download/v0.1.1/cryptctl-0.1.1-linux-arm64.tar.gz"
+      sha256 "698240a2da4b01f6f0197c62d760749d372bb04b09fc6eeffa5ba041eb089f93"
 
       def install
         bin.install "cryptctl"
